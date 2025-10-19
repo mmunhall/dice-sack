@@ -31,130 +31,125 @@ struct DieView: View {
     }
     
     var body: some View {
-        
-        Button {
-            
-        } label: {
-            ZStack {
-                switch die.value {
-                case 1:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                case 2:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -8, y: -8)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 8, y: 8)
-                case 3:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: -10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: 10)
-                    
-                case 4:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: -10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: -10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: 10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: 10)
-                    
-                case 5:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: -10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: -10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: 10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: 10)
-                    
-                case 6:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: -11)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: -11)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: -10, y: 11)
-                    
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                        .offset(x: 10, y: 11)
-                    
-                default:
-                    Circle()
-                        .frame(width: 10, height: 10)
-                        .foregroundStyle(.black)
-                }
-            }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                die.toggleLock()
+        ZStack {
+            switch die.value {
+            case 1:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+            case 2:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -8, y: -8)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 8, y: 8)
+            case 3:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: -10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: 10)
+
+            case 4:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: -10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: -10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: 10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: 10)
+
+            case 5:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: -10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: -10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: 10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: 10)
+
+            case 6:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: -11)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: -11)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: -10, y: 11)
+
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
+                    .offset(x: 10, y: 11)
+
+            default:
+                Circle()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(.black)
             }
         }
         .frame(width: 50, height: 50)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            die.toggleLock()
+        }
         .background(
             RoundedRectangle(
                 cornerRadius: 5,
