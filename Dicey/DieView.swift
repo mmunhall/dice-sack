@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct DieView: View {
-    
+
     let die: Die
-    
+    let turnActive: Bool
+
     @State private var timeRemaining = 1.5
     @State private var timerIsActive = false
     @State private var timer: Timer?
@@ -156,14 +157,15 @@ struct DieView: View {
                 style: .continuous
             )
             .stroke(.black, lineWidth: 3)
-            .fill(die.locked ? .gray : .white)
+            .fill(!turnActive || die.locked ? .gray : .white)
         )
         .compositingGroup()
         .shadow(radius: 5, x: 5, y: 5)
     }
     
-    init(_ die: Die) {
+    init(_ die: Die, turnActive: Bool = true) {
         self.die = die
+        self.turnActive = turnActive
     }
 }
 

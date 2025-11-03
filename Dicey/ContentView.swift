@@ -5,7 +5,6 @@
 //  Created by Mike Munhall on 7/26/25.
 //
 //
-
 import SwiftUI
 import SwiftData
 
@@ -16,6 +15,7 @@ struct ContentView: View {
     @State private var showingHistory = false
     @State private var numDice: Int = 6
     @State private var diceGroup = DiceGroup([])
+    @State private var turnActive = true
     
     let columns = [
         GridItem(.adaptive(minimum: 50))
@@ -30,12 +30,12 @@ struct ContentView: View {
                 VStack {
                     LazyVGrid(columns: columns) {
                         ForEach(diceGroup.dice) { die in
-                            DieView(die)
+                            DieView(die, turnActive: turnActive)
                         }
                     }
                     .padding()
-                    
-                    
+
+
                     Button() {
                         rollAll()
                     } label: {
@@ -43,11 +43,17 @@ struct ContentView: View {
                             .font(.largeTitle)
                     }
                     .buttonStyle(.borderedProminent)
-                    
+                    .opacity(turnActive ? 1 : 0)
+                    .disabled(!turnActive)
+
                     Button() {
-                        endTurn()
+                        if turnActive {
+                            endTurn()
+                        } else {
+                            newTurn()
+                        }
                     } label: {
-                        Text("End Turn")
+                        Text(turnActive ? "End Turn" : "New Turn")
                             .font(.title3)
                     }
                     .buttonStyle(.bordered)
@@ -80,11 +86,12 @@ struct ContentView: View {
             dice.append(Die(sides: 6))
         }
         diceGroup = DiceGroup(dice)
+        turnActive = true
     }
     
     func endTurn() {
         modelContext.insert(diceGroup)
-        // newTurn()
+        turnActive = false
     }
 }
 
