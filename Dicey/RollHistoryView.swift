@@ -16,11 +16,7 @@ struct RollHistoryView: View {
     @Query(sort: \DiceGroup.date, order: .reverse) var rolls: [DiceGroup]
     
     let columns = Array(repeating: GridItem(.flexible()), count: 6)
-    
-    init() {
-        print(rolls.count)
-    }
-    
+
     var body: some View {
             
         NavigationStack {
