@@ -30,7 +30,9 @@ struct ContentView: View {
                 VStack {
                     LazyVGrid(columns: columns) {
                         ForEach(diceGroup.dice) { die in
-                            DieView(die, turnActive: turnActive)
+                            DieView(die, turnActive: turnActive, onTap: {
+                                die.toggleLock()
+                            })
                         }
                     }
                     .padding()

@@ -28,7 +28,7 @@ struct RollHistoryView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(rolls) { roll in
                         ForEach(roll.dice) { die in
-                            DieView(die)
+                            DieView(die, turnActive: false)
                         }
                     }
                 }

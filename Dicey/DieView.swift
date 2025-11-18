@@ -11,6 +11,7 @@ struct DieView: View {
 
     let die: Die
     let turnActive: Bool
+    let onTap: () -> Void
 
     @State private var timeRemaining = 1.5
     @State private var timerIsActive = false
@@ -149,7 +150,7 @@ struct DieView: View {
         .frame(width: 50, height: 50)
         .contentShape(Rectangle())
         .onTapGesture {
-            die.toggleLock()
+            onTap()
         }
         .background(
             RoundedRectangle(
@@ -157,15 +158,16 @@ struct DieView: View {
                 style: .continuous
             )
             .stroke(.black, lineWidth: 3)
-            .fill(!turnActive || die.locked ? .gray : .white)
+            .fill(turnActive && die.locked ? .gray : .white)
         )
         .compositingGroup()
         .shadow(radius: 5, x: 5, y: 5)
     }
     
-    init(_ die: Die, turnActive: Bool = true) {
+    init(_ die: Die, turnActive: Bool = true, onTap: @escaping () -> Void = {}) {
         self.die = die
         self.turnActive = turnActive
+        self.onTap = onTap
     }
 }
 
