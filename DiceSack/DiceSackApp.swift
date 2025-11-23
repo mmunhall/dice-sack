@@ -1,6 +1,6 @@
 //
-//  DiceyApp.swift
-//  Dicey
+//  DiceSackApp.swift
+//  Dice Sack
 //
 //  Created by Mike Munhall on 7/26/25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct DiceyApp: App {
+struct DiceSackApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

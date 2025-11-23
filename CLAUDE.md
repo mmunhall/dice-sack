@@ -4,15 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Dicey is an iOS dice rolling application built with SwiftUI and SwiftData. It allows users to roll multiple dice, lock individual dice between rolls, and view roll history.
+Dice Sack is an iOS dice rolling application built with SwiftUI and SwiftData. It allows users to roll multiple dice, lock individual dice between rolls, and view roll history.
 
 ## Build & Development Commands
 
 ### Building and Running
-- Open the project in Xcode: `open Dicey.xcodeproj`
-- Build: `xcodebuild -scheme Dicey -configuration Debug build`
+- Open the project in Xcode: `open DiceSack.xcodeproj`
+- Build: `xcodebuild -scheme DiceSack -configuration Debug build`
 - Run in simulator: Open Xcode and use Cmd+R, or select a simulator via the Xcode GUI
-- Clean build folder: `xcodebuild clean -scheme Dicey`
+- Clean build folder: `xcodebuild clean -scheme DiceSack`
 
 ### Testing
 This project does not currently have a test suite configured.
@@ -35,7 +35,7 @@ The app uses SwiftData for persistence with two core models defined in `Models.s
 ### View Architecture
 The app follows standard SwiftUI patterns with environment-based data flow:
 
-- **DiceyApp.swift**: App entry point, sets up `.modelContainer(for: DiceGroup.self)` for SwiftData
+- **DiceSackApp.swift**: App entry point, sets up `.modelContainer(for: DiceGroup.self)` for SwiftData
 - **ContentView.swift**: Main rolling interface
   - Uses `@Environment(\.modelContext)` to access SwiftData
   - Manages current `diceGroup` state
@@ -71,7 +71,7 @@ The app follows standard SwiftUI patterns with environment-based data flow:
 
 - **Target**: iOS 18.5+
 - **Swift Version**: 5.0
-- **Bundle ID**: dev.unrequited.Dicey
+- **Bundle ID**: dev.unrequited.DiceSack
 - **Development Team**: UD788QN6R5
 - **Supported Devices**: iPhone and iPad (TARGETED_DEVICE_FAMILY = "1,2")
 - **Previews**: Enabled for SwiftUI previews

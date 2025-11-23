@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		F97C6E832E351EA100A535E9 /* Dicey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dicey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F97C6E832E351EA100A535E9 /* DiceSack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceSack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F97C6E852E351EA100A535E9 /* Dicey */ = {
+		F97C6E852E351EA100A535E9 /* DiceSack */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Dicey;
+			path = DiceSack;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		F97C6E7A2E351EA100A535E9 = {
 			isa = PBXGroup;
 			children = (
-				F97C6E852E351EA100A535E9 /* Dicey */,
+				F97C6E852E351EA100A535E9 /* DiceSack */,
 				F97C6E842E351EA100A535E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		F97C6E842E351EA100A535E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F97C6E832E351EA100A535E9 /* Dicey.app */,
+				F97C6E832E351EA100A535E9 /* DiceSack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F97C6E822E351EA100A535E9 /* Dicey */ = {
+		F97C6E822E351EA100A535E9 /* DiceSack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F97C6E8E2E351EA300A535E9 /* Build configuration list for PBXNativeTarget "Dicey" */;
+			buildConfigurationList = F97C6E8E2E351EA300A535E9 /* Build configuration list for PBXNativeTarget "DiceSack" */;
 			buildPhases = (
 				F97C6E7F2E351EA100A535E9 /* Sources */,
 				F97C6E802E351EA100A535E9 /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F97C6E852E351EA100A535E9 /* Dicey */,
+				F97C6E852E351EA100A535E9 /* DiceSack */,
 			);
-			name = Dicey;
+			name = DiceSack;
 			packageProductDependencies = (
 			);
-			productName = Dicey;
-			productReference = F97C6E832E351EA100A535E9 /* Dicey.app */;
+			productName = DiceSack;
+			productReference = F97C6E832E351EA100A535E9 /* DiceSack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F97C6E7E2E351EA100A535E9 /* Build configuration list for PBXProject "Dicey" */;
+			buildConfigurationList = F97C6E7E2E351EA100A535E9 /* Build configuration list for PBXProject "DiceSack" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F97C6E822E351EA100A535E9 /* Dicey */,
+				F97C6E822E351EA100A535E9 /* DiceSack */,
 			);
 		};
 /* End PBXProject section */
@@ -258,7 +258,7 @@
 				DEVELOPMENT_TEAM = UD788QN6R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Dicey;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dice Sack";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -270,7 +270,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.Dicey;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.DiceSack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -288,7 +288,7 @@
 				DEVELOPMENT_TEAM = UD788QN6R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Dicey;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dice Sack";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -300,7 +300,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.Dicey;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.DiceSack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -311,7 +311,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F97C6E7E2E351EA100A535E9 /* Build configuration list for PBXProject "Dicey" */ = {
+		F97C6E7E2E351EA100A535E9 /* Build configuration list for PBXProject "DiceSack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F97C6E8C2E351EA300A535E9 /* Debug */,
@@ -320,7 +320,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F97C6E8E2E351EA300A535E9 /* Build configuration list for PBXNativeTarget "Dicey" */ = {
+		F97C6E8E2E351EA300A535E9 /* Build configuration list for PBXNativeTarget "DiceSack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F97C6E8F2E351EA300A535E9 /* Debug */,

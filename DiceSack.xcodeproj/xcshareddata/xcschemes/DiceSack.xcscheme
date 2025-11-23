@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F97C6E822E351EA100A535E9"
-               BuildableName = "Dicey.app"
-               BlueprintName = "Dicey"
-               ReferencedContainer = "container:Dicey.xcodeproj">
+               BuildableName = "DiceSack.app"
+               BlueprintName = "DiceSack"
+               ReferencedContainer = "container:DiceSack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F97C6E822E351EA100A535E9"
-            BuildableName = "Dicey.app"
-            BlueprintName = "Dicey"
-            ReferencedContainer = "container:Dicey.xcodeproj">
+            BuildableName = "DiceSack.app"
+            BlueprintName = "DiceSack"
+            ReferencedContainer = "container:DiceSack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F97C6E822E351EA100A535E9"
-            BuildableName = "Dicey.app"
-            BlueprintName = "Dicey"
-            ReferencedContainer = "container:Dicey.xcodeproj">
+            BuildableName = "DiceSack.app"
+            BlueprintName = "DiceSack"
+            ReferencedContainer = "container:DiceSack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
