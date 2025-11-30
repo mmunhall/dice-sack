@@ -22,113 +22,113 @@ struct DieView: View {
             switch die.value {
             case 1:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
             case 2:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: 10)
             case 3:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: 10)
 
             case 4:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: 10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: 10)
 
             case 5:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: 10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: 10)
 
             case 6:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: -10, y: 10)
 
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
                     .offset(x: 10, y: 10)
 
             default:
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
             }
         }
