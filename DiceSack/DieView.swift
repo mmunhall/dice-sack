@@ -13,6 +13,10 @@ struct DieView: View {
     let turnActive: Bool
     let onTap: () -> Void
 
+    private var dieShape: RoundedRectangle {
+        RoundedRectangle(cornerRadius: 5, style: .continuous)
+    }
+
     var body: some View {
         ZStack {
             switch die.value {
@@ -133,14 +137,8 @@ struct DieView: View {
         .onTapGesture {
             onTap()
         }
-        .background(
-            RoundedRectangle(
-                cornerRadius: 5,
-                style: .continuous
-            )
-            .stroke(.black, lineWidth: 3)
-            .fill(turnActive && die.locked ? .gray : .white)
-        )
+        .background(dieShape.fill(turnActive && die.locked ? .gray : .white))
+        .overlay(dieShape.stroke(.black, lineWidth: 2))
         .compositingGroup()
         .shadow(radius: 5, x: 5, y: 5)
     }
