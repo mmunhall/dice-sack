@@ -13,123 +13,26 @@ struct DieView: View {
     let turnActive: Bool
     let onTap: () -> Void
 
+    private let pipPositions: [Int: [(x: CGFloat, y: CGFloat)]] = [
+        1: [(0, 0)],
+        2: [(-10, -10), (10, 10)],
+        3: [(-10, -10), (0, 0), (10, 10)],
+        4: [(-10, -10), (10, -10), (-10, 10), (10, 10)],
+        5: [(-10, -10), (10, -10), (0, 0), (-10, 10), (10, 10)],
+        6: [(-10, -10), (10, -10), (-10, 0), (10, 0), (-10, 10), (10, 10)]
+    ]
+
     private var dieShape: RoundedRectangle {
         RoundedRectangle(cornerRadius: 5, style: .continuous)
     }
 
     var body: some View {
         ZStack {
-            switch die.value {
-            case 1:
+            ForEach(Array(pipPositions[die.value, default: [(0, 0)]].enumerated()), id: \.offset) { _, position in
                 Circle()
                     .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
-            case 2:
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-            case 3:
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            case 4:
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: 10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            case 5:
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: 10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            case 6:
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: 10)
-
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            default:
-                Circle()
-                    .frame(width: 9, height: 9)
-                    .foregroundStyle(.black)
+                    .offset(x: position.x, y: position.y)
             }
         }
         .frame(width: 50, height: 50)
