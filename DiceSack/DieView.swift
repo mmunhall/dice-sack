@@ -13,138 +13,26 @@ struct DieView: View {
     let turnActive: Bool
     let onTap: () -> Void
 
-    @State private var timeRemaining = 1.5
-    @State private var timerIsActive = false
-    @State private var timer: Timer?
+    private let pipPositions: [Int: [(x: CGFloat, y: CGFloat)]] = [
+        1: [(0, 0)],
+        2: [(-10, -10), (10, 10)],
+        3: [(-10, -10), (0, 0), (10, 10)],
+        4: [(-10, -10), (10, -10), (-10, 10), (10, 10)],
+        5: [(-10, -10), (10, -10), (0, 0), (-10, 10), (10, 10)],
+        6: [(-10, -10), (10, -10), (-10, 0), (10, 0), (-10, 10), (10, 10)]
+    ]
 
-    func roll() {
-        // Start the timer
-        timerIsActive = true
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            if timeRemaining > 0 {
-                die.roll()
-                timeRemaining -= 0.1
-            } else {
-                // Timer finished
-                timer?.invalidate()
-                timerIsActive = false
-            }
-        }
+    private var dieShape: RoundedRectangle {
+        RoundedRectangle(cornerRadius: 5, style: .continuous)
     }
-    
+
     var body: some View {
         ZStack {
-            switch die.value {
-            case 1:
+            ForEach(Array(pipPositions[die.value, default: [(0, 0)]].enumerated()), id: \.offset) { _, position in
                 Circle()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 9, height: 9)
                     .foregroundStyle(.black)
-            case 2:
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -8, y: -8)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 8, y: 8)
-            case 3:
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            case 4:
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: -10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: 10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            case 5:
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: -10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: 10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 10)
-
-            case 6:
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: -11)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: -11)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: -10, y: 11)
-
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
-                    .offset(x: 10, y: 11)
-
-            default:
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundStyle(.black)
+                    .offset(x: position.x, y: position.y)
             }
         }
         .frame(width: 50, height: 50)
@@ -152,14 +40,8 @@ struct DieView: View {
         .onTapGesture {
             onTap()
         }
-        .background(
-            RoundedRectangle(
-                cornerRadius: 5,
-                style: .continuous
-            )
-            .stroke(.black, lineWidth: 3)
-            .fill(turnActive && die.locked ? .gray : .white)
-        )
+        .background(dieShape.fill(turnActive && die.locked ? .gray : .white))
+        .overlay(dieShape.stroke(.black, lineWidth: 2))
         .compositingGroup()
         .shadow(radius: 5, x: 5, y: 5)
     }
