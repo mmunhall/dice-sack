@@ -24,12 +24,12 @@ struct DieView: View {
                 Circle()
                     .frame(width: 10, height: 10)
                     .foregroundStyle(.black)
-                    .offset(x: -8, y: -8)
+                    .offset(x: -10, y: -10)
 
                 Circle()
                     .frame(width: 10, height: 10)
                     .foregroundStyle(.black)
-                    .offset(x: 8, y: 8)
+                    .offset(x: 10, y: 10)
             case 3:
                 Circle()
                     .frame(width: 10, height: 10)
@@ -95,12 +95,12 @@ struct DieView: View {
                 Circle()
                     .frame(width: 10, height: 10)
                     .foregroundStyle(.black)
-                    .offset(x: -10, y: -11)
+                    .offset(x: -10, y: -10)
 
                 Circle()
                     .frame(width: 10, height: 10)
                     .foregroundStyle(.black)
-                    .offset(x: 10, y: -11)
+                    .offset(x: 10, y: -10)
 
                 Circle()
                     .frame(width: 10, height: 10)
@@ -115,12 +115,12 @@ struct DieView: View {
                 Circle()
                     .frame(width: 10, height: 10)
                     .foregroundStyle(.black)
-                    .offset(x: -10, y: 11)
+                    .offset(x: -10, y: 10)
 
                 Circle()
                     .frame(width: 10, height: 10)
                     .foregroundStyle(.black)
-                    .offset(x: 10, y: 11)
+                    .offset(x: 10, y: 10)
 
             default:
                 Circle()
