@@ -13,25 +13,6 @@ struct DieView: View {
     let turnActive: Bool
     let onTap: () -> Void
 
-    @State private var timeRemaining = 1.5
-    @State private var timerIsActive = false
-    @State private var timer: Timer?
-
-    func roll() {
-        // Start the timer
-        timerIsActive = true
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            if timeRemaining > 0 {
-                die.roll()
-                timeRemaining -= 0.1
-            } else {
-                // Timer finished
-                timer?.invalidate()
-                timerIsActive = false
-            }
-        }
-    }
-    
     var body: some View {
         ZStack {
             switch die.value {
