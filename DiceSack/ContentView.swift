@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var numDice: Int = 6
     @State private var diceGroup = DiceGroup([])
     @State private var turnActive = true
+    @State private var isAnimating = false
     
     let columns = [
         GridItem(.adaptive(minimum: 50))
@@ -23,7 +24,7 @@ struct ContentView: View {
     
     // Computed property to check if any die is animating
     var isAnyDieAnimating: Bool {
-        diceGroup.dice.contains { $0.isAnimating }
+        isAnimating
     }
     
     var body: some View {
@@ -86,9 +87,10 @@ struct ContentView: View {
     }
     
     func rollAll() {
+        isAnimating = true
         diceGroup.rollAllWithAnimation {
-            // Trigger view update to re-enable buttons
-            // The view will automatically update when isAnyDieAnimating changes
+            // Re-enable buttons when animation completes
+            isAnimating = false
         }
     }
     
