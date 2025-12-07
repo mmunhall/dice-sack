@@ -29,7 +29,7 @@
   - **Property 3: All animations complete means no dice animating**
   - **Validates: Requirements 1.5**
 
-- [ ] 3. Update DieView to animate pip value changes
+- [x] 3. Update DieView to animate pip value changes
   - Add `.animation(.easeOut, value: die.value)` modifier to pip rendering
   - Ensure view reactively updates as die's value changes during animation
   - Test that pip transitions are smooth and visible

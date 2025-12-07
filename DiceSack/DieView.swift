@@ -35,6 +35,7 @@ struct DieView: View {
                     .offset(x: position.x, y: position.y)
             }
         }
+        .animation(.easeOut, value: die.value)
         .frame(width: 50, height: 50)
         .contentShape(Rectangle())
         .onTapGesture {
