@@ -41,7 +41,7 @@
   - In completion handler, trigger view update to re-enable buttons
   - _Requirements: 1.1, 3.1, 3.2_
 
-- [ ] 5. Implement button state management during animation
+- [x] 5. Implement button state management during animation
   - Disable Roll button when `isAnyDieAnimating` is true
   - Disable End Turn button when `isAnyDieAnimating` is true
   - Apply `.opacity(0.5)` or similar dimmed visual state to disabled buttons
