@@ -35,7 +35,7 @@
   - Test that pip transitions are smooth and visible
   - _Requirements: 1.2, 2.5_
 
-- [ ] 4. Add animation state tracking to ContentView
+- [x] 4. Add animation state tracking to ContentView
   - Add computed property `isAnyDieAnimating` that checks if any die in `diceGroup.dice` has `isAnimating = true`
   - Update `rollAll()` to call `diceGroup.rollAllWithAnimation(completion:)` instead of `diceGroup.rollAll()`
   - In completion handler, trigger view update to re-enable buttons

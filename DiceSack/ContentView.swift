@@ -21,6 +21,11 @@ struct ContentView: View {
         GridItem(.adaptive(minimum: 50))
     ]
     
+    // Computed property to check if any die is animating
+    var isAnyDieAnimating: Bool {
+        diceGroup.dice.contains { $0.isAnimating }
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -45,8 +50,8 @@ struct ContentView: View {
                             .font(.largeTitle)
                     }
                     .buttonStyle(.borderedProminent)
-                    .opacity(turnActive ? 1 : 0)
-                    .disabled(!turnActive)
+                    .opacity(turnActive && !isAnyDieAnimating ? 1 : 0.5)
+                    .disabled(!turnActive || isAnyDieAnimating)
 
                     Button() {
                         if turnActive {
@@ -59,6 +64,8 @@ struct ContentView: View {
                             .font(.title3)
                     }
                     .buttonStyle(.bordered)
+                    .opacity(isAnyDieAnimating ? 0.5 : 1)
+                    .disabled(isAnyDieAnimating)
                     
                 }
                 .toolbar {
@@ -79,7 +86,10 @@ struct ContentView: View {
     }
     
     func rollAll() {
-        diceGroup.rollAll()
+        diceGroup.rollAllWithAnimation {
+            // Trigger view update to re-enable buttons
+            // The view will automatically update when isAnyDieAnimating changes
+        }
     }
     
     func newTurn() {
