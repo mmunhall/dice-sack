@@ -52,7 +52,7 @@
   - **Property 4: Buttons disabled if and only if any die animating**
   - **Validates: Requirements 3.1, 3.2, 3.4**
 
-- [ ] 6. Block dice lock interactions during animation
+- [x] 6. Block dice lock interactions during animation
   - Modify `DieView` tap gesture to check if die is animating before calling `onTap()`
   - Alternatively, modify `ContentView` to pass no-op closure when `isAnyDieAnimating` is true
   - Verify that tapping animating dice has no effect on lock state
@@ -62,7 +62,7 @@
   - **Property 5: Animating dice ignore lock toggles**
   - **Validates: Requirements 3.5**
 
-- [ ] 7. Verify SwiftData persistence compatibility
+- [x] 7. Verify SwiftData persistence compatibility
   - Confirm `isAnimating` is marked as `@Transient` and not persisted
   - Test that calling `endTurn()` (which persists via `modelContext.insert()`) works correctly
   - Verify no crashes or data corruption when persisting dice
