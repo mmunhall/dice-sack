@@ -16,10 +16,16 @@ struct ContentView: View {
     @State private var numDice: Int = 6
     @State private var diceGroup = DiceGroup([])
     @State private var turnActive = true
+    @State private var isAnimating = false
     
     let columns = [
         GridItem(.adaptive(minimum: 50))
     ]
+    
+    // Computed property to check if any die is animating
+    var isAnyDieAnimating: Bool {
+        isAnimating
+    }
     
     var body: some View {
         NavigationView {
@@ -45,8 +51,8 @@ struct ContentView: View {
                             .font(.largeTitle)
                     }
                     .buttonStyle(.borderedProminent)
-                    .opacity(turnActive ? 1 : 0)
-                    .disabled(!turnActive)
+                    .opacity(turnActive && !isAnyDieAnimating ? 1 : 0.5)
+                    .disabled(!turnActive || isAnyDieAnimating)
 
                     Button() {
                         if turnActive {
@@ -59,6 +65,8 @@ struct ContentView: View {
                             .font(.title3)
                     }
                     .buttonStyle(.bordered)
+                    .opacity(isAnyDieAnimating ? 0.5 : 1)
+                    .disabled(isAnyDieAnimating)
                     
                 }
                 .toolbar {
@@ -79,7 +87,11 @@ struct ContentView: View {
     }
     
     func rollAll() {
-        diceGroup.rollAll()
+        isAnimating = true
+        diceGroup.rollAllWithAnimation {
+            // Re-enable buttons when animation completes
+            isAnimating = false
+        }
     }
     
     func newTurn() {

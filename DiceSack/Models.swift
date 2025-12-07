@@ -15,6 +15,9 @@ class Die {
     private(set) var value: Int
     private(set) var locked: Bool
     
+    @Transient
+    var isAnimating: Bool = false
+    
     init(sides: Int) {
         self.sides = sides
         self.value = 1
@@ -41,6 +44,51 @@ class Die {
         self.locked.toggle()
     }
     
+    func animateRoll(completion: @escaping () -> Void) {
+        guard !locked else {
+            completion()
+            return
+        }
+        
+        // Generate random start delay (0-0.25s) and duration (0.5-1.0s)
+        let startDelay = Double.random(in: 0.0...0.25)
+        let duration = Double.random(in: 0.5...1.0)
+        
+        // Set isAnimating to true at start
+        DispatchQueue.main.asyncAfter(deadline: .now() + startDelay) { [weak self] in
+            guard let self = self else {
+                completion()
+                return
+            }
+            
+            self.isAnimating = true
+            
+            // Cycle through random pip values during animation
+            let animationSteps = 10
+            let stepDuration = duration / Double(animationSteps)
+            
+            var currentStep = 0
+            
+            func animateStep() {
+                if currentStep < animationSteps {
+                    self.value = Int.random(in: 1...self.sides)
+                    currentStep += 1
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + stepDuration) {
+                        animateStep()
+                    }
+                } else {
+                    // Final roll to set the actual result
+                    self.roll()
+                    self.isAnimating = false
+                    completion()
+                }
+            }
+            
+            animateStep()
+        }
+    }
+    
     #if DEBUG
     static let example: Die = .init(sides: 6)
     #endif
@@ -61,6 +109,32 @@ class DiceGroup {
     func rollAll() {
         for die in dice {
             die.roll()
+        }
+    }
+    
+    func rollAllWithAnimation(completion: @escaping () -> Void) {
+        let unlockedDice = dice.filter { !$0.locked }
+        
+        // If no unlocked dice, complete immediately
+        guard !unlockedDice.isEmpty else {
+            completion()
+            return
+        }
+        
+        // Track completion count
+        var completedCount = 0
+        let totalCount = unlockedDice.count
+        
+        // Start all unlocked dice animations simultaneously
+        for die in unlockedDice {
+            die.animateRoll {
+                completedCount += 1
+                
+                // Call completion handler only when all dice finish
+                if completedCount == totalCount {
+                    completion()
+                }
+            }
         }
     }
     

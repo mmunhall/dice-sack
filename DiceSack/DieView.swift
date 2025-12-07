@@ -38,7 +38,10 @@ struct DieView: View {
         .frame(width: 50, height: 50)
         .contentShape(Rectangle())
         .onTapGesture {
-            onTap()
+            // Block tap gesture if die is animating
+            if !die.isAnimating {
+                onTap()
+            }
         }
         .background(dieShape.fill(turnActive && die.locked ? .gray : .white))
         .overlay(dieShape.stroke(.black, lineWidth: 2))
