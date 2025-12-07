@@ -1,10 +1,14 @@
 # Implementation Plan
 
-- [ ] 1. Add animation state to Die model
-  - Add `isAnimating` boolean property to `Die` class
-  - Ensure `isAnimating` is not persisted to SwiftData (transient state only)
-  - Add `animateRoll(completion:)` method with random delay and duration
-  - _Requirements: 1.1, 1.3, 1.4_
+- [x] 1. Add animation state and timing to Die model
+  - Add `isAnimating` boolean property to `Die` class (transient, not persisted)
+  - Add `animateRoll(completion:)` method that:
+    - Generates random start delay (0-0.25s) and duration (0.5-1.0s)
+    - Sets `isAnimating = true` at start
+    - Cycles through random pip values during animation
+    - Sets `isAnimating = false` and calls completion when done
+  - Ensure `isAnimating` is marked as transient for SwiftData (use `@Transient` attribute)
+  - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2_
 
 - [ ]* 1.1 Write property test for animation state transitions
   - **Property 2: Animation completion means settled state**
@@ -16,49 +20,52 @@
 
 - [ ] 2. Implement animation coordination in DiceGroup
   - Add `rollAllWithAnimation(completion:)` method to `DiceGroup`
-  - Coordinate animation start across all unlocked dice
+  - Start all unlocked dice animations simultaneously (delays handled per-die)
   - Track completion of all individual die animations
-  - Call completion handler when all dice finish
-  - _Requirements: 1.1, 1.5_
+  - Call completion handler only when all dice finish animating
+  - _Requirements: 1.1, 1.5, 2.3_
 
 - [ ]* 2.1 Write property test for group animation completion
   - **Property 3: All animations complete means no dice animating**
   - **Validates: Requirements 1.5**
 
-- [ ] 3. Update DieView to display animating pip values
-  - Modify `DieView` to observe die's pip value changes during animation
-  - Apply SwiftUI `.easeOut` animation to pip transitions
-  - Ensure view updates smoothly as pip values change
-  - _Requirements: 1.2_
+- [ ] 3. Update DieView to animate pip value changes
+  - Add `.animation(.easeOut, value: die.value)` modifier to pip rendering
+  - Ensure view reactively updates as die's value changes during animation
+  - Test that pip transitions are smooth and visible
+  - _Requirements: 1.2, 2.5_
 
 - [ ] 4. Add animation state tracking to ContentView
-  - Add computed property or state to track if any die is animating
-  - Update `rollAll()` to use `rollAllWithAnimation` instead of `rollAll()`
+  - Add computed property `isAnyDieAnimating` that checks if any die in `diceGroup.dice` has `isAnimating = true`
+  - Update `rollAll()` to call `diceGroup.rollAllWithAnimation(completion:)` instead of `diceGroup.rollAll()`
+  - In completion handler, trigger view update to re-enable buttons
   - _Requirements: 1.1, 3.1, 3.2_
 
-- [ ] 5. Implement button state management
-  - Disable Roll button when any die is animating
-  - Disable End Turn button when any die is animating
-  - Apply dimmed visual state to disabled buttons
-  - Re-enable buttons when all animations complete
+- [ ] 5. Implement button state management during animation
+  - Disable Roll button when `isAnyDieAnimating` is true
+  - Disable End Turn button when `isAnyDieAnimating` is true
+  - Apply `.opacity(0.5)` or similar dimmed visual state to disabled buttons
+  - Ensure buttons re-enable automatically when all animations complete
   - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
 - [ ]* 5.1 Write property test for button state logic
   - **Property 4: Buttons disabled if and only if any die animating**
   - **Validates: Requirements 3.1, 3.2, 3.4**
 
-- [ ] 6. Block dice interactions during animation
-  - Modify tap gesture handling in `ContentView` to check animation state
-  - Prevent `toggleLock()` calls on any die while animations are active
+- [ ] 6. Block dice lock interactions during animation
+  - Modify `DieView` tap gesture to check if die is animating before calling `onTap()`
+  - Alternatively, modify `ContentView` to pass no-op closure when `isAnyDieAnimating` is true
+  - Verify that tapping animating dice has no effect on lock state
   - _Requirements: 3.5_
 
 - [ ]* 6.1 Write property test for lock toggle blocking
   - **Property 5: Animating dice ignore lock toggles**
   - **Validates: Requirements 3.5**
 
-- [ ] 7. Ensure SwiftData persistence compatibility
-  - Verify `isAnimating` is not included in SwiftData schema
-  - Test that persisting during animation doesn't cause issues
+- [ ] 7. Verify SwiftData persistence compatibility
+  - Confirm `isAnimating` is marked as `@Transient` and not persisted
+  - Test that calling `endTurn()` (which persists via `modelContext.insert()`) works correctly
+  - Verify no crashes or data corruption when persisting dice
   - _Requirements: 4.3_
 
 - [ ]* 7.1 Write property test for persistence during animation
