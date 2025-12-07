@@ -112,6 +112,32 @@ class DiceGroup {
         }
     }
     
+    func rollAllWithAnimation(completion: @escaping () -> Void) {
+        let unlockedDice = dice.filter { !$0.locked }
+        
+        // If no unlocked dice, complete immediately
+        guard !unlockedDice.isEmpty else {
+            completion()
+            return
+        }
+        
+        // Track completion count
+        var completedCount = 0
+        let totalCount = unlockedDice.count
+        
+        // Start all unlocked dice animations simultaneously
+        for die in unlockedDice {
+            die.animateRoll {
+                completedCount += 1
+                
+                // Call completion handler only when all dice finish
+                if completedCount == totalCount {
+                    completion()
+                }
+            }
+        }
+    }
+    
     #if DEBUG
     static let example: DiceGroup = .init([.init(sides: 6), .init(sides: 6), .init(sides: 6), .init(sides: 6), .init(sides: 6), .init(sides: 6)])
     #endif

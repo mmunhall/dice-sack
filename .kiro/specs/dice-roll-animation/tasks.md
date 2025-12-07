@@ -18,7 +18,7 @@
   - **Property 1: Only unlocked dice animate**
   - **Validates: Requirements 1.1, 1.4**
 
-- [ ] 2. Implement animation coordination in DiceGroup
+- [x] 2. Implement animation coordination in DiceGroup
   - Add `rollAllWithAnimation(completion:)` method to `DiceGroup`
   - Start all unlocked dice animations simultaneously (delays handled per-die)
   - Track completion of all individual die animations
