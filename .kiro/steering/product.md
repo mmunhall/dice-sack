@@ -1,0 +1,1 @@
+DiceSack is an iOS dice rolling utility app that allows users to roll multiple six-sided dice with locking functionality. Users can lock individual dice between rolls, end turns to save roll history, and view past rolls. The app targets iOS 18.5+ and supports both iPhone and iPad.
