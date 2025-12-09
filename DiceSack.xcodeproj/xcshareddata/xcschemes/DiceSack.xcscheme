@@ -29,6 +29,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F922C1BA2EE647130019ED4A"
+               BuildableName = "DiceSackTests.xctest"
+               BlueprintName = "DiceSackTests"
+               ReferencedContainer = "container:DiceSack.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F922C1C72EE6723C0019ED4A"
+               BuildableName = "DiceSackUITests.xctest"
+               BlueprintName = "DiceSackUITests"
+               ReferencedContainer = "container:DiceSack.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

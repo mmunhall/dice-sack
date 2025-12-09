@@ -6,11 +6,40 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		F922C1BF2EE647130019ED4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F97C6E7B2E351EA100A535E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F97C6E822E351EA100A535E9;
+			remoteInfo = DiceSack;
+		};
+		F922C1CE2EE6723C0019ED4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F97C6E7B2E351EA100A535E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F97C6E822E351EA100A535E9;
+			remoteInfo = DiceSack;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F922C1BB2EE647130019ED4A /* DiceSackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiceSackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F922C1C82EE6723C0019ED4A /* DiceSackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiceSackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97C6E832E351EA100A535E9 /* DiceSack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceSack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F922C1BC2EE647130019ED4A /* DiceSackTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DiceSackTests;
+			sourceTree = "<group>";
+		};
+		F922C1C92EE6723C0019ED4A /* DiceSackUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DiceSackUITests;
+			sourceTree = "<group>";
+		};
 		F97C6E852E351EA100A535E9 /* DiceSack */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DiceSack;
@@ -19,6 +48,20 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F922C1B82EE647130019ED4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F922C1C52EE6723C0019ED4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F97C6E802E351EA100A535E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				F97C6E852E351EA100A535E9 /* DiceSack */,
+				F922C1BC2EE647130019ED4A /* DiceSackTests */,
+				F922C1C92EE6723C0019ED4A /* DiceSackUITests */,
 				F97C6E842E351EA100A535E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				F97C6E832E351EA100A535E9 /* DiceSack.app */,
+				F922C1BB2EE647130019ED4A /* DiceSackTests.xctest */,
+				F922C1C82EE6723C0019ED4A /* DiceSackUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +95,52 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F922C1BA2EE647130019ED4A /* DiceSackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F922C1C32EE647130019ED4A /* Build configuration list for PBXNativeTarget "DiceSackTests" */;
+			buildPhases = (
+				F922C1B72EE647130019ED4A /* Sources */,
+				F922C1B82EE647130019ED4A /* Frameworks */,
+				F922C1B92EE647130019ED4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F922C1C02EE647130019ED4A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F922C1BC2EE647130019ED4A /* DiceSackTests */,
+			);
+			name = DiceSackTests;
+			packageProductDependencies = (
+			);
+			productName = DiceSackTests;
+			productReference = F922C1BB2EE647130019ED4A /* DiceSackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F922C1C72EE6723C0019ED4A /* DiceSackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F922C1D02EE6723C0019ED4A /* Build configuration list for PBXNativeTarget "DiceSackUITests" */;
+			buildPhases = (
+				F922C1C42EE6723C0019ED4A /* Sources */,
+				F922C1C52EE6723C0019ED4A /* Frameworks */,
+				F922C1C62EE6723C0019ED4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F922C1CF2EE6723C0019ED4A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F922C1C92EE6723C0019ED4A /* DiceSackUITests */,
+			);
+			name = DiceSackUITests;
+			packageProductDependencies = (
+			);
+			productName = DiceSackUITests;
+			productReference = F922C1C82EE6723C0019ED4A /* DiceSackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F97C6E822E351EA100A535E9 /* DiceSack */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F97C6E8E2E351EA300A535E9 /* Build configuration list for PBXNativeTarget "DiceSack" */;
@@ -77,9 +170,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
+					F922C1BA2EE647130019ED4A = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = F97C6E822E351EA100A535E9;
+					};
+					F922C1C72EE6723C0019ED4A = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = F97C6E822E351EA100A535E9;
+					};
 					F97C6E822E351EA100A535E9 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -100,11 +201,27 @@
 			projectRoot = "";
 			targets = (
 				F97C6E822E351EA100A535E9 /* DiceSack */,
+				F922C1BA2EE647130019ED4A /* DiceSackTests */,
+				F922C1C72EE6723C0019ED4A /* DiceSackUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F922C1B92EE647130019ED4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F922C1C62EE6723C0019ED4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F97C6E812E351EA100A535E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +232,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F922C1B72EE647130019ED4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F922C1C42EE6723C0019ED4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F97C6E7F2E351EA100A535E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +255,106 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F922C1C02EE647130019ED4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F97C6E822E351EA100A535E9 /* DiceSack */;
+			targetProxy = F922C1BF2EE647130019ED4A /* PBXContainerItemProxy */;
+		};
+		F922C1CF2EE6723C0019ED4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F97C6E822E351EA100A535E9 /* DiceSack */;
+			targetProxy = F922C1CE2EE6723C0019ED4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F922C1C12EE647130019ED4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UD788QN6R5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.DiceSackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiceSack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DiceSack";
+			};
+			name = Debug;
+		};
+		F922C1C22EE647130019ED4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UD788QN6R5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.DiceSackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiceSack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DiceSack";
+			};
+			name = Release;
+		};
+		F922C1D12EE6723C0019ED4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UD788QN6R5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.DiceSackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiceSack;
+			};
+			name = Debug;
+		};
+		F922C1D22EE6723C0019ED4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UD788QN6R5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.unrequited.DiceSackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiceSack;
+			};
+			name = Release;
+		};
 		F97C6E8C2E351EA300A535E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -311,6 +541,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F922C1C32EE647130019ED4A /* Build configuration list for PBXNativeTarget "DiceSackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F922C1C12EE647130019ED4A /* Debug */,
+				F922C1C22EE647130019ED4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F922C1D02EE6723C0019ED4A /* Build configuration list for PBXNativeTarget "DiceSackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F922C1D12EE6723C0019ED4A /* Debug */,
+				F922C1D22EE6723C0019ED4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F97C6E7E2E351EA100A535E9 /* Build configuration list for PBXProject "DiceSack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

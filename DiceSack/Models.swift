@@ -1,10 +1,3 @@
-//
-//  Die.swift
-//  Dice Sack
-//
-//  Created by Mike Munhall on 7/28/25.
-//
-
 import Foundation
 import SwiftData
 
